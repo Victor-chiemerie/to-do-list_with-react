@@ -1,10 +1,10 @@
 import './headder.css';
 
-const headder = () => (
+const Headder = () => (
   <div>
     <h1>Todos</h1>
     <p>Items will persist in the browser local storage</p>
   </div>
 );
 
-export default headder;
+export default Headder;

@@ -1,9 +1,8 @@
-import './App.css';
-import headder from './component/headder';
+import Headder from './headderComponent/headder';
 
 function App() {
   return (
-    <headder />
+    <Headder />
   );
 }
 
