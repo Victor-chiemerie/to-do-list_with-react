@@ -1,8 +1,12 @@
 import Headder from './headderComponent/headder';
+import Logic from './logicComponent/logic';
 
 function App() {
   return (
-    <Headder />
+    <div>
+      <Headder />
+      <Logic />
+    </div>
   );
 }
 
