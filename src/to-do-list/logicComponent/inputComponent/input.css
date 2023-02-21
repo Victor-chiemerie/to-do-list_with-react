@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    width: calc(100% - 10px);
+}
+
+input {
+    width: calc(100% - 8px);
+    padding: 4px;
+}

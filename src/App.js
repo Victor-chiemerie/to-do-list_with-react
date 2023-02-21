@@ -1,11 +1,10 @@
-import Headder from './headderComponent/headder';
-import Logic from './logicComponent/logic';
+import ToDoList from './to-do-list/to-do-list';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <Headder />
-      <Logic />
+      <ToDoList />
     </div>
   );
 }
