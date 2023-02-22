@@ -4,8 +4,10 @@ import Logic from './logicComponent/logic';
 
 const ToDoList = () => (
   <section className="to-do-list">
-    <Headder />
-    <Logic />
+    <div className="todos">
+      <Headder />
+      <Logic />
+    </div>
   </section>
 );
 

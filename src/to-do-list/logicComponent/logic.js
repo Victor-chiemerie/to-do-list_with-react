@@ -1,26 +1,18 @@
 import './logic.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Input from './inputComponent/input';
 import List from './listComponent/list';
 
+const getInitialTodos = () => {
+  // getting stored items
+  const temp = localStorage.getItem('todos');
+  const savedTodos = JSON.parse(temp);
+  return savedTodos || [];
+};
+
 const Logic = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: 'Setup development environment',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'Develop website and add content',
-      completed: true,
-    },
-    {
-      id: 3,
-      title: 'Deploy to live server',
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
@@ -42,18 +34,42 @@ const Logic = () => {
 
   const addTodoItem = (title) => {
     const newTodo = {
-      id: 4,
+      // update state with user's input
+      id: uuidv4(),
       title,
       completed: false,
     };
     setTodos([...todos, newTodo]);
-    // update state with user's input
   };
+
+  /* eslint-disable no-param-reassign */
+  const setUpdate = (updatedTitle, id) => {
+    // update state
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      }),
+    );
+  };
+
+  useEffect(() => {
+    // storing todos items
+    const temp = JSON.stringify(todos);
+    localStorage.setItem('todos', temp);
+  }, [todos]);
 
   return (
     <div>
       <Input addTodoItem={addTodoItem} />
-      <List todosProps={todos} handleChange={handleChange} delTodo={delTodo} />
+      <List
+        todosProps={todos}
+        handleChange={handleChange}
+        delTodo={delTodo}
+        setUpdate={setUpdate}
+      />
     </div>
   );
 };

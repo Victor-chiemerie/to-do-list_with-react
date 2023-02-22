@@ -1,11 +1,9 @@
 .to-do-list {
-    border: 1px solid grey;
-    padding: 10px;
-    box-shadow: 2px 2px 3px 2px rgb(171, 163, 163);
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-self: center;
-    gap: 8px;
-    width: fit-content;
+    width: 100%;
+  padding: 8rem 20px 3rem;
+}
+
+.todos {
+    max-width: 580px;
+  margin: 0 auto;
 }
