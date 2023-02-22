@@ -40,9 +40,19 @@ const Logic = () => {
     ]);
   };
 
+  const addTodoItem = (title) => {
+    const newTodo = {
+      id: 4,
+      title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+    // update state with user's input
+  };
+
   return (
     <div>
-      <Input />
+      <Input addTodoItem={addTodoItem} />
       <List todosProps={todos} handleChange={handleChange} delTodo={delTodo} />
     </div>
   );
