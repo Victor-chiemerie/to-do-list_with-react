@@ -3,7 +3,7 @@ import Headder from './headderComponent/headder';
 import Logic from './logicComponent/logic';
 
 const ToDoList = () => (
-  <section>
+  <section className="to-do-list">
     <Headder />
     <Logic />
   </section>

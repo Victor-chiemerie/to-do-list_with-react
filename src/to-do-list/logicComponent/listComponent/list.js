@@ -1,13 +1,12 @@
 import './list.css';
+import Item from './listItemComponent/item';
 
-const List = () => (
-  <li>
-    <div>
-      <input checked type="checkbox" className="checkbox" id="check" />
-      <input type="text" className="strikethrough" id="task" />
-    </div>
-    <span id="removeTask" className="material-symbols-outlined">delete</span>
-  </li>
+const List = ({ todosProps, handleChange, delTodo }) => (
+  <ul>
+    {todosProps.map((todo) => (
+      <Item key={todo.id} itemProp={todo} handleChange={handleChange} delTodo={delTodo} />
+    ))}
+  </ul>
 );
 
 export default List;
