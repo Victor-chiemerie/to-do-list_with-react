@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+}
+
+.list div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+.strikethrough {
+  width: calc(100% - 30px);
+}
